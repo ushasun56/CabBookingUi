@@ -62,7 +62,7 @@ export default class Banner extends Component {
               />
               <div class="carousel-caption ">
                 <h2 class="display-4 text-white mb-2 mt-4">
-                  Gold &amp; Silver
+                  Enjoy Your  journey
                 </h2>
               </div>
             </div>

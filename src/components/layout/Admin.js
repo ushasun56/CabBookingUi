@@ -8,7 +8,7 @@ export default class Admin extends Component {
             
            
        <div>
-        <div id="index.html" class="header_section">
+        <div id="index.html" class="header_section1">
 
           <div class="container">
 

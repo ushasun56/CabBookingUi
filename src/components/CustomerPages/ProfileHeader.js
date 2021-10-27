@@ -6,7 +6,7 @@ export default class ProfileHeader extends Component {
 
         return (
            
-            <div id="index.html" class="header_section">
+            <div id="index.html" class="header_section1">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-lg-3">
@@ -16,11 +16,11 @@ export default class ProfileHeader extends Component {
                             <div class="menu_text">
                                 <ul>
                                     <li><Link to="/home">Home</Link></li>                                                    
-                                    <li><Link to="/about">About</Link></li>
+                                   
                                     <li><a href="#taxis">Profile</a></li>
                                     <li><a href="#booking">Booking</a></li>
                                     <li> <Link to="/contact" >Contact Us</Link></li>
-                                    <li> <Link to="/home" ><a  class="btn btn-default btn-sm">Logout</a></Link></li>
+                                    <li> <Link to="/home" >Logout</Link></li>
                                 
                         
                                 </ul>

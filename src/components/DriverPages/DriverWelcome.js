@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import Footer from '../layout/Footer'
-import Header from '../layout/Header'
+import ProfileHeader from '../CustomerPages/ProfileHeader';
+import Footer from '../layout/Footer';
+
 
 
 
@@ -11,7 +12,7 @@ export default class DriverWelcome extends Component {
         return (
             <div>
             
-            <Header/>
+            <ProfileHeader/>
                 
                 <br/>
                 <br/>

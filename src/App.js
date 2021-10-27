@@ -22,7 +22,7 @@ import DriverDetailAuto from './components/CustomerPages/DriverDetailAuto';
 import DriverDetailmini from './components/CustomerPages/DriverDetailmini';
 import DriverDetailPrime from './components/CustomerPages/DriverDetailPrime';
 import AllTrips from './components/layout/AllTrips';
-import Contactus from './components/layout/Contactus';
+import Contact from './components/layout/Contact';
 import { Provider } from "react-redux";
 import store from "./Store.js";
 import CabWiseTrip from './components/layout/CabWiseTrip';
@@ -34,6 +34,7 @@ import Logindriver from './components/LoginPage/Logindriver';
 import Loginadmin from './components/LoginPage/Loginadmin';
 import DriverWelcome from './components/DriverPages/DriverWelcome';
 import CustomerDash from './components/CustomerPages/CustomerDash';
+import TripBook from './components/CustomerPages/TripBook';
 
 
 
@@ -51,7 +52,7 @@ function App() {
      <Route path="/cabs" component={Cabs}/>
      <Route path="/about" component={About}/>
      
-     <Route path="/contact" component={Contactus}/>
+     <Route path="/contact" component={Contact}/>
      <Route path="/customerregister" component={CustomerRegister}></Route>
      <Route path="/driverregister" component={DriverRegister}></Route>
     
@@ -79,7 +80,7 @@ function App() {
      <Route path="/adminpath" component={Admin}/>
 
      <Route path="/costomerschedule" component={CustomerDash}/>
-     
+     <Route path="/finaltrip" component={TripBook}/>
      <Footer/>
      <CopyRight/>
    </div>

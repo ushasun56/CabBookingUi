@@ -11,7 +11,7 @@ export default class CustomerRegister extends Component {
 
     return (
       <div>
-        <div id="index.html" class="header_section">
+        <div id="index.html" class="header_section1">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-lg-3">
@@ -28,27 +28,17 @@ export default class CustomerRegister extends Component {
                   <Link to="/home" >Home</Link>
                   </li>
                     <li>
-                      <a href="#about">About</a>
+                    <Link to="/about" >About</Link>
                     </li>
                     <li>
-                      <a href="#contact">Contact Us</a>
+                    <Link to="/contact" >Contact Us</Link>
                     </li>
 
-                    <div id="myNav" class="overlay">
-                      <a
-                        href="javascript:void(0)"
-                        class="closebtn"
-                        onclick="closeNav()"
-                      >
-                        &times;
-                      </a>
-                      <div class="overlay-content">
-                        <a href="index.html">Home</a>
-                        <a href="#about">About</a>
+                  
+                      
 
-                        <a href="#contact">Contact Us</a>
-                      </div>
-                    </div>
+                       
+                   
                   </ul>
                 </div>
               </div>
@@ -166,7 +156,7 @@ export default class CustomerRegister extends Component {
                               placeholder="Confirm Password"
                             />
                           </div>
-
+                          <Link to="/logincustomerpage">
                           <div class="form-group text-center">
                             <input
                               type="button"
@@ -180,7 +170,7 @@ export default class CustomerRegister extends Component {
 
                             <div class="text-danger" id="err2"></div>
                           </div>
-
+                           </Link>
                           <div
                             class="form-group text-center"
                             style={{

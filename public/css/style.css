@@ -219,12 +219,24 @@ button {
 .header_section {
     width: 100%;
     float: left;
-    background-color: #8fa6af;
+    background-color: #043c52;
     height: auto;
     padding-top: 10px;
     padding-bottom: 10px;
     position: fixed;
     z-index: 01;
+    opacity: 0.8;
+}
+.header_section1 {
+    width: 100%;
+    float: left;
+    background-color: #043c52;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    z-index: 01;
+   
 }
 
 .logo {
@@ -705,7 +717,7 @@ input.email-bt::placeholder {
     left: 50px;
     top: 40%;
     background-color: #f8ca12;}
-}
+
 
 #main_slider .carousel-control-prev, #main_slider .carousel-control-next {
     width: 65px;
