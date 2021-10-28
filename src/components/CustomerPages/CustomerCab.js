@@ -5,6 +5,14 @@ import { Link } from "react-router-dom";
 
 
 export default class CustomerCab extends Component {
+
+  constructor(props)
+{
+    super(props);
+    // this.state={
+    //     trip:""
+    // }
+}
     render() {
 
       const styleObj = {
@@ -12,10 +20,12 @@ export default class CustomerCab extends Component {
         color: " #f4db31",
       
     }
-
+    // const{trip} = this.props.data;
+    // console.log(trip);
         return (
+         
           <div>
-          
+         
           <ProfileHeader/>
             <div id="taxis" className="taxis_section layout_padding">
             <div className="container">

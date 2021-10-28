@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import PropTypes from "prop-types";
 import Cabitem from './Cabitem';
@@ -30,7 +31,7 @@ import { getCabs } from '../../actions/CabAction';
                            
 
                            <br />
-
+                           <Link to="/cabinsert" className="btn btn-lg btn-info">Insert Cab</Link>
                            <hr />
                           { cabs.map(cab =>(
                               <Cabitem key={cab.id} cab={cab}/>

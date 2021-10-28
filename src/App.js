@@ -35,6 +35,7 @@ import Loginadmin from './components/LoginPage/Loginadmin';
 import DriverWelcome from './components/DriverPages/DriverWelcome';
 import CustomerDash from './components/CustomerPages/CustomerDash';
 import TripBook from './components/CustomerPages/TripBook';
+import Cabdetail from './components/layout/Cabdetail';
 
 
 
@@ -81,6 +82,7 @@ function App() {
 
      <Route path="/costomerschedule" component={CustomerDash}/>
      <Route path="/finaltrip" component={TripBook}/>
+     <Route path="/cabinsert" component={Cabdetail}/>
      <Footer/>
      <CopyRight/>
    </div>

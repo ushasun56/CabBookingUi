@@ -1,7 +1,52 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { createDriverProfile } from "../../actions/ActionCreators";
+import {connect} from "react-redux";
+import PropTypes from 'prop-types';
 
-export default class DriverRegister extends Component {
+ class DriverRegister extends Component {
+
+  constructor(props)
+    {
+        super(props);
+        this.state={
+            name:"",
+            password:"",
+            mobileNumber:"",
+            address:"",
+            email:"",
+            licenceNo:"",
+            rating:""
+            //errors: { }
+        }
+        this.onChange=this.onChange.bind(this);
+        this.onSubmit=this.onSubmit.bind(this);
+    };
+  
+    onChange(event)
+    {
+        console.log("onChange triggered..");
+        // this.setState({projectName:event.target.value});
+        this.setState({[event.target.name]:event.target.value});
+    }
+
+    onSubmit(event)
+    {
+        event.preventDefault();
+        const driverProfile = {
+            name:this.state.name,
+            email:this.state.email,
+            address:this.state.address,
+            mobileNumber:this.state.mobileNumber,
+            password:this.state.password,
+            licenceNo:this.state.licenceNo,
+            rating:this.state.rating
+        };
+        this.props.createDriverProfile(driverProfile,this.props.history);
+        console.log(driverProfile);
+        alert("You have been registered successfully...");
+    }
+
   render() {
     const styleObj = {
       fontSize: 33,
@@ -45,12 +90,7 @@ export default class DriverRegister extends Component {
         <br></br>
         <br></br>
         <div>
-          <form
-            id="register-form"
-            name="register-form"
-            method="post"
-            role="form"
-          >
+        <form onSubmit={this.onSubmit} id="register-form" name="register-form" method="post">
             <div class="modal-dialog">
               <div class="modal-content ">
                 <div class="modal-header" style={{ background: "gainsboro" }}>
@@ -92,21 +132,11 @@ export default class DriverRegister extends Component {
                               id="name"
                               tabindex="1"
                               class="form-control"
-                              placeholder="User Name"
-                              value=""
+                              placeholder="Full Name"  value={this.state.name} onChange={this.onChange}
                             />
                           </div>
 
-                          <div class="form-group">
-                            <input
-                              type="password"
-                              name="password"
-                              id="password"
-                              tabindex="6"
-                              class="form-control"
-                              placeholder="Password"
-                            />
-                          </div>
+                          
 
                           <div class="form-group">
                             <input
@@ -115,20 +145,18 @@ export default class DriverRegister extends Component {
                               id="address"
                               tabindex="4"
                               class="form-control"
-                              placeholder="Address"
-                              value=""
+                              placeholder="Address"  value={this.state.address} onChange={this.onChange}
                             />
                           </div>
 
                           <div class="form-group">
                             <input
                               type="text"
-                              name="mobileno"
+                              name="mobileNumber"
                               id="mobileno"
                               tabindex="3"
                               class="form-control"
-                              placeholder="Mobile Number"
-                              value=""
+                              placeholder="Mobile Number"  value={this.state.mobileNumber} onChange={this.onChange}
                             />
                           </div>
 
@@ -139,53 +167,60 @@ export default class DriverRegister extends Component {
                               id="email"
                               tabindex="2"
                               class="form-control"
-                              placeholder="Email Address"
-                              value=""
+                              placeholder="Email Address"  value={this.state.email} onChange={this.onChange} 
                             />
                           </div>
 
                           <div class="form-group">
                             <input
                               type="text"
-                              name="name"
+                              name="licenceNo"
                               id="name"
                               tabindex="1"
                               class="form-control"
-                              placeholder="Licence Number"
-                              value=""
+                              placeholder="Licence Number"  value={this.state.licenceNo} onChange={this.onChange}
                             />
                           </div>
 
                           <div class="form-group">
                             <input
                               type="text"
-                              name="name"
+                              name="rating"
                               id="name"
                               tabindex="1"
                               class="form-control"
-                              placeholder="Rating"
-                              value=""
+                              placeholder="Rating"  value={this.state.rating} onChange={this.onChange}
+                            />
+                          </div>
+                          <div class="form-group">
+                            <input
+                              type="password"
+                              name="password"
+                              id="password"
+                              tabindex="6"
+                              class="form-control"
+                              placeholder="Password"  value={this.state.password} onChange={this.onChange}
                             />
                           </div>
 
                           {/*  <div class="form-group">
                                                     <input type="password" name="cpassword" id="cpassword" tabindex="7" class="form-control" placeholder="Confirm Password" />
                                 </div>*/}
-                                <Link to="/logindriverpage">
+                              
                           <div class="form-group text-center">
-                            <input
-                              type="button"
+                            <button
+                              type="submit"
                               name="btnregister"
                               id="btnregister"
                               tabindex="4"
                               class="form-control btn btn-register"
                               value="Register Now"
-                              style={{ background: "lightblue" }}
-                            />
+                              style={{ background: "lightblue", height:"50px"}}
+                            > Register Now</button>
 
                             <div class="text-danger" id="err2"></div>
                           </div>
-                           </Link>
+                          
                           <div
                             class="form-group text-center"
                             style={{
@@ -215,3 +250,13 @@ export default class DriverRegister extends Component {
     );
   }
 }
+DriverRegister.propTypes = {
+  createDriverProfile: PropTypes.func.isRequired,
+  //errors: PropTypes.object.isRequired
+};
+
+// const mapStateToProps = state => ({
+//     errors: state.errors
+// });
+
+export default connect(null, {createDriverProfile}) (DriverRegister);

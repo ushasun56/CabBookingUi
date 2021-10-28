@@ -29,4 +29,6 @@ export const delcabs = pt_id => async dispatch => {
 
     }
 
+    
+
 };
