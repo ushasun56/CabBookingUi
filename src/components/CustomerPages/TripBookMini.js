@@ -4,6 +4,7 @@ import "./style2.css";
 import {connect} from "react-redux";
 import PropTypes from 'prop-types';
 import { getTripstablemini } from '../../actions/TripTableAction';
+import ProfileHeader from "./ProfileHeader";
 
  class TripBookMini extends Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ import { getTripstablemini } from '../../actions/TripTableAction';
 
     return (
       <div>
+      <ProfileHeader/>
       <br></br><br></br>
         <body>
           <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding1">
@@ -29,7 +31,7 @@ import { getTripstablemini } from '../../actions/TripTableAction';
                 </a>
                 <div class="float-right">
                   <h3 class="mb-0">Invoice </h3>
-                  Date: 12 Jun,2019
+                  Date: 28 oct,2021
                 </div>
               </div>
               <div class="card1-body1 bg-white">
