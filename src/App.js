@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+import AuthenticatedRoute from "./components/LoginPage/AuthenticatedRoute.jsx";
 
 import Header from './components/layout/Header';
 
@@ -31,7 +31,7 @@ import AllDriver from './components/layout/AllDriver';
 import AllCab from './components/layout/AllCab';
 import Logincustomer from './components/LoginPage/Logincustomer';
 import Logindriver from './components/LoginPage/Logindriver';
-import Loginadmin from './components/LoginPage/Loginadmin';
+import Loginadmin from './components/LoginPage/Loginadmin.js';
 import DriverWelcome from './components/DriverPages/DriverWelcome';
 import CustomerDash from './components/CustomerPages/CustomerDash';
 
@@ -40,6 +40,7 @@ import TripBookAuto from './components/CustomerPages/TripBookAuto';
 import CustBookings from './components/CustomerPages/CustBookings';
  import TripBookMini from './components/CustomerPages/TripBookMini';
  import TripBookPrime from './components/CustomerPages/TripBookPrime';
+ import Logout from "./components/LoginPage/Logout";
 
 
 
@@ -64,12 +65,12 @@ function App() {
      <Route path="/driverfirstpage" component={DriverDetailAuto}></Route>
      <Route path="/driversecondpage" component={DriverDetailmini}></Route>
      <Route path="/driverthiredpage" component={DriverDetailPrime}></Route>
-     <Route path="/alltrips" component={AllTrips}></Route>
-     <Route path="/cabwisetrip" component={CabWiseTrip}></Route>
-     <Route path="/allcustomer" component={AllCustomer}></Route>
+     <AuthenticatedRoute path="/alltrips" component={AllTrips}/>
+     <AuthenticatedRoute path="/cabwisetrip" component={CabWiseTrip}/>
+     <AuthenticatedRoute path="/allcustomer" component={AllCustomer}/>
      <Route path= "/selectcabpage" component={CustomerCab}></Route>
-     <Route path= "/alldriver" component={AllDriver}></Route>
-     <Route path= "/allcab" component={AllCab}></Route>
+     <AuthenticatedRoute path= "/alldriver" component={AllDriver} />
+     <AuthenticatedRoute path= "/allcab" component={AllCab}/>
      <Route path= "/customerlogin" component={Logincustomer}></Route>
 
     
@@ -80,16 +81,18 @@ function App() {
 
      <Route path="/loginadminpage" component={Loginadmin}></Route>
 
-     <Route path="/adminhome" component={DriverWelcome}></Route>
+     <Route path="/driverhome" component={DriverWelcome}/>
 
-     <Route path="/adminpath" component={Admin}/>
+     <AuthenticatedRoute path="/adminpath" component={Admin}/>
 
      <Route path="/costomerschedule" component={CustomerDash}/>
      <Route path="/finaltripauto" component={TripBookAuto}/>
      <Route path="/finaltripmini" component={TripBookMini}/>
   <Route path="/finaltripprime" component={TripBookPrime}/>
      <Route path="/cabinsert" component={Cabdetail}/>
-     <Route path="/custbook" component={CustBookings}/>
+     <AuthenticatedRoute path="/custbook" component={CustBookings}/>
+     <Route path="/logout" component={Logout} />
+      
      <Footer/>
      <CopyRight/>
    </div>

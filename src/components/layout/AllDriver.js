@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import Driveritem from './Driveritem';
 import { getDrivers } from '../../actions/DriverAction';
+import Adminheader from '../CustomerPages/Adminheader';
 
 
 class AllDriver extends Component {
@@ -16,6 +17,7 @@ class AllDriver extends Component {
        const {drivers} = this.props.drivers;
        return (
            <div className="projects">
+           <Adminheader/>
                <div className="container">
                    <div className="row">
                        <div className="col-md-12">

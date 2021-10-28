@@ -1,5 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {Link} from "react-router-dom";
+
+import AuthenticationService from "../LoginPage/AuthenticationService";
+
+
 
 export default class ProfileHeader extends Component {
     render() {
@@ -20,7 +24,11 @@ export default class ProfileHeader extends Component {
                                     <li><a href="#taxis">Profile</a></li>
                                     <li><Link to="/custbook">Booking</Link></li> 
                                     <li> <Link to="/contact" >Contact Us</Link></li>
-                                    <li> <Link to="/home" >Logout</Link></li>
+                                    <li> <Link to="/logout"
+
+                                    className="btn btn-default btn-sm"
+            
+                                    onClick={AuthenticationService.logout} >Logout</Link></li>
                                 
                         
                                 </ul>

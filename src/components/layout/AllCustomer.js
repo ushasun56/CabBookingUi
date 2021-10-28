@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import Customeritem from './Customeritem';
 import { getCustomers } from '../../actions/CustomerAction';
+import Adminheader from '../CustomerPages/Adminheader';
 
  class AllCustomer extends Component {
     componentDidMount()
@@ -15,6 +16,7 @@ import { getCustomers } from '../../actions/CustomerAction';
        const {customers} = this.props.customers;
        return (
            <div className="projects">
+           <Adminheader/>
                <div className="container">
                    <div className="row">
                        <div className="col-md-12">

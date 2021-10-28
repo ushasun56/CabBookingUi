@@ -8,6 +8,7 @@ import Tripitem from './Tripitem';
 
 import Customeritem from './Customeritem';
 import { getCustomers } from '../../actions/CustomerAction';
+import Adminheader from '../CustomerPages/Adminheader';
 
  class AllTrips extends Component {
        componentDidMount()
@@ -21,6 +22,7 @@ import { getCustomers } from '../../actions/CustomerAction';
       
         return (
             <div className="projects">
+            <Adminheader/>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">

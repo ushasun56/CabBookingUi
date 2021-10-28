@@ -69,8 +69,8 @@ import ProfileHeader from "./ProfileHeader";
                         <td class="left">{trip.toLocation}</td>
                         <td class="right">{trip.toDateTime}</td>
                         <td class="center">{trip.fromDateTime}</td>
-                        <td class="right">{trip.bill}rs</td>
-                        <td class="right">{trip.bill}rs</td>
+                        <td class="right">{trip.bill+50}rs</td>
+                        <td class="right">{trip.bill+50}rs</td>
                       </tr>
                     </tbody>
                   </table>
@@ -85,7 +85,7 @@ import ProfileHeader from "./ProfileHeader";
                             <strong class="text1-dark1">Total</strong>{" "}
                           </td>
                           <td class="right">
-                            <strong class="text1-dark1">{trip.bill}rs</strong>
+                            <strong class="text1-dark1">{trip.bill+50}rs</strong>
                           </td>
                         </tr>
                       </tbody>

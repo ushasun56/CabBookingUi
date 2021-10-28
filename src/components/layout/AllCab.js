@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
 import Cabitem from './Cabitem';
 import { getCabs } from '../../actions/CabAction';
+import Adminheader from '../CustomerPages/Adminheader';
 
 
  class AllCab extends Component {
@@ -17,6 +18,7 @@ import { getCabs } from '../../actions/CabAction';
        const {cabs} = this.props.cabs;
        return (
            <div className="projects">
+              <Adminheader/>
                <div className="container">
                    <div className="row">
                        <div className="col-md-12">
