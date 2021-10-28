@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import ProfileHeader from './ProfileHeader';
 import { Link } from 'react-router-dom';
+import { getdriverPrime } from '../../actions/DriverDetailAction';
+import PropTypes from "prop-types";
+import { connect } from 'react-redux';
 
-export default class DriverDetailPrime extends Component {
+ class DriverDetailPrime extends Component {
+    componentDidMount() {
+
+        this.props.getdriverPrime();
+
+      }
     render() {
+      
+        const { driverauto } = this.props.driverauto;
         return (
             <div>
             <div>
@@ -12,10 +22,11 @@ export default class DriverDetailPrime extends Component {
             <h1 class="display-4">Driver For Your Drive</h1>
             <p class="lead">Driver Information As Per Prime Driver....</p>
             <hr class="my-4"></hr>
-            <p className="display-4 text-center"><h5>Driver name</h5></p>
-            <p className="display-4 text-center"><h5>Licence number</h5></p>
-            <p className="display-4 text-center"><h5>Contact Number</h5></p>
-            <Link to={"/finaltrip"}>
+            <p className="display-4 text-center"><h5>Driver Name:-{driverauto.name}</h5></p>
+            <p className="display-4 text-center"><h5>Licence Number:-{driverauto.licenceNo}</h5></p>
+            <p className="display-4 text-center"><h5>Mobile Number:-{driverauto.mobileNumber}</h5></p>
+        
+            <Link to={"/finaltripprime"}>
             <p className="display-4 text-center">
               <a class="btn btn-primary btn-lg" href="#" role="button">Confirm Your Trip </a>
             </p>
@@ -26,3 +37,19 @@ export default class DriverDetailPrime extends Component {
         )
     }
 }
+DriverDetailPrime.propTypes = {
+
+    driverauto: PropTypes.object.isRequired,
+
+    getdriverPrime: PropTypes.func.isRequired,
+
+  };
+
+  const mapStateToProps = (state) => ({
+
+    driverauto: state.driverauto,
+
+  });
+ 
+export default connect(mapStateToProps, { getdriverPrime })(DriverDetailPrime);
+

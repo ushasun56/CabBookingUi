@@ -4,9 +4,9 @@ import React, { Component } from 'react'
 export default class Tripitem extends Component {
     render() {
         const {trip} = this.props;
-        const {customer} = this.props;
-        const {driver} = this.props;
-        const {cab} = this.props;
+        // const {customer} = this.props;
+        // const {driver} = this.props;
+        // const {cab} = this.props;
         return (
 
             <div className="container">

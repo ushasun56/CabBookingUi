@@ -18,7 +18,7 @@ export default class ProfileHeader extends Component {
                                     <li><Link to="/home">Home</Link></li>                                                    
                                    
                                     <li><a href="#taxis">Profile</a></li>
-                                    <li><a href="#booking">Booking</a></li>
+                                    <li><Link to="/custbook">Booking</Link></li> 
                                     <li> <Link to="/contact" >Contact Us</Link></li>
                                     <li> <Link to="/home" >Logout</Link></li>
                                 

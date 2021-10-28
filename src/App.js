@@ -34,8 +34,12 @@ import Logindriver from './components/LoginPage/Logindriver';
 import Loginadmin from './components/LoginPage/Loginadmin';
 import DriverWelcome from './components/DriverPages/DriverWelcome';
 import CustomerDash from './components/CustomerPages/CustomerDash';
-import TripBook from './components/CustomerPages/TripBook';
+
 import Cabdetail from './components/layout/Cabdetail';
+import TripBookAuto from './components/CustomerPages/TripBookAuto';
+import CustBookings from './components/CustomerPages/CustBookings';
+ import TripBookMini from './components/CustomerPages/TripBookMini';
+ import TripBookPrime from './components/CustomerPages/TripBookPrime';
 
 
 
@@ -81,8 +85,11 @@ function App() {
      <Route path="/adminpath" component={Admin}/>
 
      <Route path="/costomerschedule" component={CustomerDash}/>
-     <Route path="/finaltrip" component={TripBook}/>
+     <Route path="/finaltripauto" component={TripBookAuto}/>
+     <Route path="/finaltripmini" component={TripBookMini}/>
+  <Route path="/finaltripprime" component={TripBookPrime}/>
      <Route path="/cabinsert" component={Cabdetail}/>
+     <Route path="/custbook" component={CustBookings}/>
      <Footer/>
      <CopyRight/>
    </div>

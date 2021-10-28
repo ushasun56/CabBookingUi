@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./style2.css";
+import {connect} from "react-redux";
+import PropTypes from 'prop-types';
+import { getTripstable } from '../../actions/TripTableAction';
 
-export default class TripBook extends Component {
+ class TripBookAuto extends Component {
+  componentDidMount() {
+    this.props.getTripstable();
+  }
+
   render() {
+    const {trip} = this.props.trip;
+
     return (
       <div>
       <br></br><br></br>
@@ -27,16 +36,15 @@ export default class TripBook extends Component {
                 <div class="row mb-4">
                   <div class="col-sm-6">
                     <h5 class="mb-3">Driver Detail</h5>
-                    <h3 class="text1-dark1 mb-1">Driver Name</h3>
-                    <div>cab number</div>
-                    <div>Email: Driver@gmail.com</div>
-                    <div>Phone: +91 9897 989 989</div>
+                    <h3 class="text1-dark1 mb-1">{trip.driver.name}</h3>
+                    <div>Email: {trip.driver.email}</div>
+                    <div>Phone: +91 {trip.driver.mobileNumber}</div>
                   </div>
                   <div class="col-sm-6 ">
                     <h5 class="mb-3">Customer Detail</h5>
-                    <h3 class="text-dark1 mb-1">Customer Name</h3>
-                    <div>Email: customer@gmail.com</div>
-                    <div>Phone: +91 9895 398 009</div>
+                    <h3 class="text-dark1 mb-1">{trip.customer.name}</h3>
+                    <div>Email: {trip.customer.email}</div>
+                    <div>Phone: +91 {trip.customer.mobileNumber}</div>
                   </div>
                 </div>
                 <div class="table-responsive-sm">
@@ -55,12 +63,12 @@ export default class TripBook extends Component {
                     <tbody>
                       <tr>
                         <td class="center">1</td>
-                        <td class="left strong">Thane</td>
-                        <td class="left">Pune</td>
-                        <td class="right">13-02-2021</td>
-                        <td class="center">14-02-2021</td>
-                        <td class="right">50rs</td>
-                        <td class="right">50rs</td>
+                        <td class="left strong">{trip.fromLocation}</td>
+                        <td class="left">{trip.toLocation}</td>
+                        <td class="right">{trip.toDateTime}</td>
+                        <td class="center">{trip.fromDateTime}</td>
+                        <td class="right">{trip.bill}rs</td>
+                        <td class="right">{trip.bill}rs</td>
                       </tr>
                     </tbody>
                   </table>
@@ -75,7 +83,7 @@ export default class TripBook extends Component {
                             <strong class="text1-dark1">Total</strong>{" "}
                           </td>
                           <td class="right">
-                            <strong class="text1-dark1">$50</strong>
+                            <strong class="text1-dark1">{trip.bill}rs</strong>
                           </td>
                         </tr>
                       </tbody>
@@ -93,3 +101,12 @@ export default class TripBook extends Component {
     );
   }
 }
+TripBookAuto.propTypes = {
+  trip: PropTypes.object.isRequired,
+  getTripstable: PropTypes.func.isRequired,
+};
+const mapStateToProps = (state) => ({
+  trip: state.trip,
+});
+
+export default connect(mapStateToProps, { getTripstable })(TripBookAuto);
